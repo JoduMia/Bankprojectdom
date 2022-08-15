@@ -5,8 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
 </head>
-<body>
-    welcome to the bank
+<body class="bg-gray-700">
+    <div class="flex flex-col justify-center items-center md:h-screen space-y-8 mb-3 lg:mb-0">
+        <h1 class="font-semibold sm:font-bold text-center capitalize text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-blue-600">let's get some<span class="font-bold sm:font-extrabold text-blue-700">"moooooooney" !!!</span></h1>
+        <div class="container flex flex-col space-y-10 justify-center px-3">
+            <div class="grid grid-cols-3 w-full space-x-6">
+                <div class="bg-green-600 px-3 py-5 space-y-2 text-yellow-50 rounded-lg">
+                    <h1 class="text-lg font-bold capitalize">deposit</h1>
+                    <h3 class="text-2xl font-extrabold">$00</h3>
+                </div>
+                <div class="bg-pink-600 px-3 py-5 space-y-2 text-yellow-50 rounded-lg">
+                    <h1 class="text-lg font-bold capitalize">withdraw</h1>
+                    <h3 class="text-2xl font-extrabold">$00</h3>
+                </div>
+                <div class="bg-yellow-600 px-3 py-5 space-y-2 text-yellow-50 rounded-lg">
+                    <h1 class="text-lg font-bold capitalize">balance</h1>
+                    <h3 class="text-2xl font-extrabold">$1200</h3>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 w-full lg:space-x-6 space-y-6 lg:space-y-0">
+                <div class="bg-blue-600 px-14 py-10 space-y-4 text-yellow-50 rounded-lg">
+                    <h1 class="capitalize font-semibold text-xl">Please deposit.</h1>
+                    <input type="text" placeholder="$ amount you want to deposit" id="deposti" class="block w-full px-4 py-2 rounded text-black placeholder:text-green-400 placeholder:font-semibold focus:border-0 focus:outline-none">
+                    <button id="depositbtn" type="submit" class="block bg-red-500 px-6 uppercase py-2 rounded-md text-sm font-semibold text-green-500 border-2 border-transparent hover:text-blue-600 hover:bg-blue-50 hover:border-2 hover:border-blue-600 duration-500 shadow-lg">
+                        deposit
+                    </button>
+                </div>
+                <div class="bg-blue-500 px-14 py-10 space-y-4 text-yellow-50 rounded-lg">
+                    <h1 class="capitalize font-semibold text-xl">Please withdraw.</h1>
+                    <input type="text" placeholder="$ amount you want to withdraw" id="withdraw" class="block w-full px-4 py-2 rounded text-black placeholder:text-green-400 placeholder:font-semibold focus:border-0 focus:outline-none">
+                    <button id="withdrawbtn" type="submit" class="block bg-red-500 px-6 uppercase py-2 rounded-md text-sm font-semibold text-green-500 border-2 border-transparent hover:text-blue-600 hover:bg-blue-50 hover:border-2 hover:border-blue-600 duration-500 shadow-lg">
+                        withdraw
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
