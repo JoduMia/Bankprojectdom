@@ -4,6 +4,11 @@ const password = document.getElementById('password');
 const mail = 'sheikhsuzan71@gmail.com';
 const pass = 223344;
 
+// window.onload function
+window.onload = function () {
+    update();
+}
+
 
 // LOgin function
 function sub() {
@@ -17,7 +22,6 @@ function sub() {
 
 
 // update function
-
 function update() {
     const depositBtn = document.getElementById('depositbtn');
     const withdrawBtn = document.getElementById('withdrawbtn');
@@ -31,23 +35,29 @@ function update() {
     let depositamount = 0;
 
     depositBtn.addEventListener('click', function () {
-        balances = balances + Number(dipoamount.value);
-        balance.innerText = `$${balances}`;
-        depositamount = depositamount + Number(dipoamount.value);
-        deposit.innerText =`$${depositamount}`;
+        if(Number(dipoamount.value) >= 0) {
+            balances = balances + Number(dipoamount.value);
+            balance.innerText = `$${balances}`;
+            depositamount = depositamount + Number(dipoamount.value);
+            deposit.innerText =`$${depositamount}`;
+        } else {
+            alert('Negative or invalid number denied !!!')
+        }
     })
 
     withdrawBtn.addEventListener('click', function () {
-        if((balances - Number(withamount.value)) >= 0) {
-            balances = balances - Number(withamount.value);
-            balance.innerText = `$${balances}`;
-            withamo = withamo + Number(withamount.value);
-            withdraw.innerText =`$${withamo}`;
+        if(Number(withamount.value) >= 0){
+            if((balances - Number(withamount.value)) >= 0) {
+                balances = balances - Number(withamount.value);
+                balance.innerText = `$${balances}`;
+                withamo = withamo + Number(withamount.value);
+                withdraw.innerText =`$${withamo}`;
+            } else {
+                alert('You have not enough balance to withdraw');
+            }
         } else {
-            alert('You have not enough balance to withdraw');
+            alert('Negative value has no existence. Input a valid positive amount. !!!')
         }
     })
 
 }
-
-update();
