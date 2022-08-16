@@ -40,6 +40,7 @@ function update() {
             balance.innerText = `$${balances}`;
             depositamount = depositamount + Number(dipoamount.value);
             deposit.innerText =`$${depositamount}`;
+            dipoamount.value = '';
         } else {
             alert('Negative or invalid number denied !!!')
         }
@@ -52,7 +53,9 @@ function update() {
                 balance.innerText = `$${balances}`;
                 withamo = withamo + Number(withamount.value);
                 withdraw.innerText =`$${withamo}`;
+                withamount.value = '';
             } else {
+                withamount.value = '';
                 alert('You have not enough balance to withdraw');
             }
         } else {
